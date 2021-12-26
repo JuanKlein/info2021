@@ -17,7 +17,7 @@ class Categoria(models.Model):
 
 class Post(models.Model):
 	titulo=models.CharField(max_length=50)
-	contenido=models.CharField(max_length=50)
+	contenido=models.TextField()
 	imagen=models.ImageField(upload_to="posts", null=True, blank=True)
 	autor=models.ForeignKey(User, on_delete=models.CASCADE)
 	catergorias=models.ManyToManyField(Categoria)
